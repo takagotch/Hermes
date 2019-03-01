@@ -101,17 +101,55 @@ email := hermes.Email{
   Body: hermes.Body{
     Actions: []hermes.Action{
       {
-      
+        Instructions: "To get started with Hermes, please click here:",
+        Button: hermes.Button{
+          Color: "#22BC66",
+          Text: "Confirm your account",
+          Link: "https://hermes-example.com/confirm?token=dxxxxxxxxxxxx"
+        },
       },
     },
   },
 }
 
 
+email := hermes.Email{
+  Body: hermes.Body{
+    Table: hermes.Table{
+      Data: [][]hermes.Entry{
+        
+        {
+          {Key: "Item", Value: "Golang"},
+          {Key: "Description", Value: "Open source programming language that makes it easy to build simple, reliable, and efficient software"},
+          {Key: "Price", Value: "$10.99"},
+        },
+        {
+          {Key: "Item", Value: "Golang"},
+          {Key: "Programmatically create beautiful e-mails using Golang."},
+          {Key: "Price", Value: "$10.99"}
+        },
+      },
+      Columns: hermes.Columns{
+        
+        CustomWidth: map[]string{
+          "Item": "20%",
+          "Price": "15%",
+        },
+        CustomAlignment: map[string]string{
+          "Price": "right",
+        },
+      },
+    },
+  },
+}
 
 
-
-
+email := hermes.Email{
+  Body: hermes.Body{
+    FreeMarkdown: `
+`,
+  }
+}
 
 
 
